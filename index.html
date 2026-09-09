@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown Stone Hotel</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="logo">
+            CROWN <span>STONE</span>
+        </div>
+
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('rooms')">Rooms</a>
+            <a href="#" onclick="showPage('booking')">Booking</a>
+            <a href="#" onclick="showPage('admin')">Admin</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= LOGIN PAGE ================= -->
+    <section id="login" class="page login-page">
+
+        <div class="login-background">
+
+            <div class="welcome-content">
+                <div class="yellow-pill">
+                    WELCOME TO CROWN STONE
+                </div>
+
+                <h1>
+                    Stay comfortable.<br>
+                    Stay memorable.
+                </h1>
+
+                <p>
+                    Experience a comfortable and memorable stay
+                    at Crown Stone Hotel.
+                </p>
+            </div>
+
+            <div class="login-box">
+
+                <h2>Login</h2>
+
+                <p class="small-text">
+                    Select your role to continue
+                </p>
+
+                <div class="role-buttons">
+                    <button class="role active">Guest</button>
+                    <button class="role">Admin</button>
+                </div>
+
+                <label>Username</label>
+                <input type="text" placeholder="Enter username">
+
+                <label>Password</label>
+                <input type="password" placeholder="Enter password">
+
+                <a href="#" class="forgot">
+                    Forgot password?
+                </a>
+
+                <button class="main-button"
+                        onclick="showPage('home')">
+                    LOGIN
+                </button>
+
+                <p class="register-text">
+                    New guest?
+                    <a href="#" onclick="showPage('home')">
+                        Explore rooms first
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOME / ROOM PAGE ================= -->
+    <section id="home" class="page hidden">
+
+        <div class="content">
+
+            <div class="page-heading">
+                <div class="yellow-pill">
+                    WELCOME TO HOTEL
+                </div>
+
+                <h1>Find your perfect room</h1>
+
+                <p>
+                    Browse our rooms, compare prices and ratings,
+                    and select the room that suits you.
+                </p>
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input type="text"
+                       placeholder="Search for room type">
+
+                <button class="search-button">
+                    🔍 SEARCH
+                </button>
+
+            </div>
+
+
+            <!-- ROOM CARDS -->
+            <div class="room-container">
+
+
+                <!-- SINGLE ROOM -->
+                <div class="room-card">
+
+                    <div class="room-image">
+                        <img
+                        src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+                        alt="Single bedroom">
+                    </div>
+
+                    <div class="room-details">
+
+                        <h2>Single Bedroom</h2>
+
+                        <div class="room-info">
+                            <span>$75/day</span>
+
+                            <span class="stars">
+                                ★★★★☆
+                            </span>
+                        </div>
+
+                        <p>
+                            Comfortable room suitable for one guest.
+                        </p>
+
+                        <div class="services">
+
+                            <span>Wi-Fi</span>
+                            <span>Breakfast</span>
+                            <span>TV</span>
+
+                            <span class="excluded">
+                                Mini Bar excluded
+                            </span>
+
+                        </div>
+
+                        <button class="book-button"
+                                onclick="selectRoom('Single Bedroom',75)">
+                            BOOK
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TWIN ROOM -->
+                <div class="room-card">
+
+                    <div class="room-image">
+                        <img
+                        src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80"
+                        alt="Twin bedroom">
+                    </div>
+
+                    <div class="room-details">
+
+                        <h2>Twin Bedroom</h2>
+
+                        <div class="room-info">
+                            <span>$120/day</span>
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+                        </div>
+
+                        <p>
+                            Two comfortable beds for friends or family.
+                        </p>
+
+                        <div class="services">
+
+                            <span>Wi-Fi</span>
+                            <span>Breakfast</span>
+                            <span>TV</span>
+
+                            <span class="excluded">
+                                Room service excluded
+                            </span>
+
+                        </div>
+
+                        <button class="book-button"
+                                onclick="selectRoom('Twin Bedroom',120)">
+                            BOOK
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DELUXE ROOM -->
+                <div class="room-card">
+
+                    <div class="room-image">
+                        <img
+                        src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80"
+                        alt="Deluxe room">
+                    </div>
+
+                    <div class="room-details">
+
+                        <h2>Deluxe Room</h2>
+
+                        <div class="room-info">
+                            <span>$160/day</span>
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+                        </div>
+
+                        <p>
+                            Premium room with spacious sitting area.
+                        </p>
+
+                        <div class="services">
+
+                            <span>Wi-Fi</span>
+                            <span>Breakfast</span>
+                            <span>Room Service</span>
+                            <span>Parking</span>
+
+                        </div>
+
+                        <button class="book-button"
+                                onclick="selectRoom('Deluxe Room',160)">
+                            BOOK
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUITE -->
+                <div class="room-card">
+
+                    <div class="room-image">
+                        <img
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                        alt="Executive suite">
+                    </div>
+
+                    <div class="room-details">
+
+                        <h2>Executive Suite</h2>
+
+                        <div class="room-info">
+                            <span>$220/day</span>
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+                        </div>
+
+                        <p>
+                            Spacious premium suite for a luxurious stay.
+                        </p>
+
+                        <div class="services">
+
+                            <span>Wi-Fi</span>
+                            <span>Breakfast</span>
+                            <span>Room Service</span>
+                            <span>Airport Transfer</span>
+
+                        </div>
+
+                        <button class="book-button"
+                                onclick="selectRoom('Executive Suite',220)">
+                            BOOK
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOTEL INFORMATION -->
+            <div class="hotel-information">
+
+                <h2>Hotel Facilities</h2>
+
+                <div class="facility-container">
+
+                    <div class="facility">
+                        <h3>48</h3>
+                        <p>Rooms Available</p>
+                    </div>
+
+                    <div class="facility">
+                        <h3>24/7</h3>
+                        <p>Food & Beverages</p>
+                    </div>
+
+                    <div class="facility">
+                        <h3>4.8 ★</h3>
+                        <p>Guest Rating</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BOOKING PAGE ================= -->
+    <section id="booking" class="page hidden green-page">
+
+        <div class="content">
+
+            <a href="#" onclick="showPage('home')" class="back">
+                ← Back to rooms
+            </a>
+
+            <div class="page-heading">
+
+                <div class="yellow-pill">
+                    BOOK YOUR STAY
+                </div>
+
+                <h1>Complete your booking</h1>
+
+                <p>
+                    Select your dates, guests and room information.
+                </p>
+
+            </div>
+
+
+            <div class="booking-layout">
+
+
+                <!-- FORM -->
+                <div class="booking-form">
+
+                    <h2>Booking Information</h2>
+
+                    <label>Room Type</label>
+
+                    <select id="roomType">
+                        <option>Single Bedroom</option>
+                        <option>Twin Bedroom</option>
+                        <option>Deluxe Room</option>
+                        <option>Executive Suite</option>
+                    </select>
+
+
+                    <label>Number of Rooms</label>
+
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+
+
+                    <div class="two-columns">
+
+                        <div>
+                            <label>Check-in Date</label>
+                            <input type="date"
+                                   value="2026-07-06">
+                        </div>
+
+                        <div>
+                            <label>Check-in Time</label>
+                            <input type="time"
+                                   value="14:00">
+                        </div>
+
+                    </div>
+
+
+                    <div class="two-columns">
+
+                        <div>
+                            <label>Check-out Date</label>
+                            <input type="date"
+                                   value="2026-07-16">
+                        </div>
+
+                        <div>
+                            <label>Check-out Time</label>
+                            <input type="time"
+                                   value="11:00">
+                        </div>
+
+                    </div>
+
+
+                    <label>Number of Guests</label>
+
+                    <select>
+                        <option>1 Guest</option>
+                        <option>2 Guests</option>
+                        <option>3 Guests</option>
+                        <option>4 Guests</option>
+                    </select>
+
+
+                    <h2 class="guest-heading">
+                        Guest Information
+                    </h2>
+
+
+                    <label>Guest Name</label>
+
+                    <input type="text"
+                           placeholder="Enter full name">
+
+
+                    <label>Age</label>
+
+                    <input type="number"
+                           placeholder="Enter age">
+
+
+                    <label>ID Proof Type</label>
+
+                    <select>
+                        <option>Passport</option>
+                        <option>Driving Licence</option>
+                        <option>National ID</option>
+                    </select>
+
+
+                    <label>ID Proof Number</label>
+
+                    <input type="text"
+                           placeholder="Enter ID proof number">
+
+
+                    <button class="main-button"
+                            onclick="showPage('payment')">
+                        CONTINUE TO PAYMENT
+                    </button>
+
+                </div>
+
+
+                <!-- SUMMARY -->
+                <div class="booking-summary">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+                    alt="Selected room">
+
+                    <h2 id="summaryRoom">
+                        Single Bedroom
+                    </h2>
+
+                    <div class="summary-row">
+                        <span>Stay</span>
+                        <strong>10 nights</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Room price</span>
+                        <strong id="summaryPrice">
+                            $750
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <strong id="summaryTax">
+                            $75
+                        </strong>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+
+                        <strong id="summaryTotal">
+                            $825
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAYMENT PAGE ================= -->
+    <section id="payment" class="page hidden">
+
+        <div class="content">
+
+            <a href="#"
+               onclick="showPage('booking')"
+               class="back">
+                ← Back to booking
+            </a>
+
+            <div class="payment-layout">
+
+
+                <div class="payment-box">
+
+                    <h1>Payment</h1>
+
+                    <p>
+                        Complete your payment and confirm your booking.
+                    </p>
+
+                    <h2 class="payment-total">
+                        Total: <span id="paymentAmount">$825</span>
+                    </h2>
+
+                    <h3>
+                        How would you like to pay?
+                    </h3>
+
+
+                    <label class="payment-option">
+                        <input type="radio"
+                               name="payment"
+                               checked>
+                        Net Banking
+                    </label>
+
+
+                    <label class="payment-option">
+                        <input type="radio"
+                               name="payment">
+                        Card
+                    </label>
+
+
+                    <label class="payment-option">
+                        <input type="radio"
+                               name="payment">
+                        UPI
+                    </label>
+
+
+                    <label>
+                        Payment Details
+                    </label>
+
+                    <input type="text"
+                           placeholder="Enter payment details">
+
+
+                    <button class="main-button"
+                            onclick="showPage('confirmation')">
+                        PAY NOW
+                    </button>
+
+                </div>
+
+
+                <div class="booking-summary">
+
+                    <h2>Booking Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Guest</span>
+                        <strong>Chandan S</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Room</span>
+                        <strong id="paymentRoom">
+                            Single Bedroom
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Check-in</span>
+                        <strong>6 July 2026</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Check-out</span>
+                        <strong>16 July 2026</strong>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+
+                        <strong id="paymentSummaryTotal">
+                            $825
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONFIRMATION PAGE ================= -->
+    <section id="confirmation" class="page hidden">
+
+        <div class="content">
+
+            <div class="confirmation-box">
+
+                <div class="confirmed">
+                    ✓ CONFIRMED
+                </div>
+
+                <h1>
+                    Thank you for choosing us!!
+                </h1>
+
+                <p class="confirmation-message">
+                    Your booking has been successfully confirmed.
+                </p>
+
+
+                <div class="confirmation-grid">
+
+                    <div>
+                        <small>Guest Name</small>
+                        <strong>Chandan S</strong>
+                    </div>
+
+                    <div>
+                        <small>Room</small>
+                        <strong id="confirmationRoom">
+                            Single Bedroom
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Total Amount</small>
+                        <strong id="confirmationAmount">
+                            $825
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Booking Status</small>
+                        <strong>Confirmed</strong>
+                    </div>
+
+                    <div>
+                        <small>Check-in</small>
+                        <strong>
+                            6 July 2026 · 2:00 PM
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Check-out</small>
+                        <strong>
+                            16 July 2026 · 11:00 AM
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Guests</small>
+                        <strong>1</strong>
+                    </div>
+
+                    <div>
+                        <small>Payment</small>
+                        <strong>Paid</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="confirmation-buttons">
+
+                    <button class="main-button"
+                            onclick="window.print()">
+                        DOWNLOAD CONFIRMATION PDF
+                    </button>
+
+                    <button class="secondary-button"
+                            onclick="showPage('home')">
+                        BACK TO ROOMS
+                    </button>
+
+                </div>
+
+
+                <p class="cancel-note">
+                    You can cancel your booking before check-in.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ADMIN PAGE ================= -->
+    <section id="admin" class="page hidden">
+
+        <div class="content">
+
+            <div class="page-heading">
+
+                <div class="yellow-pill">
+                    ADMIN PANEL
+                </div>
+
+                <h1>Hotel Operations</h1>
+
+                <p>
+                    Manage room availability and cleaning staff.
+                </p>
+
+            </div>
+
+
+            <div class="admin-stats">
+
+                <div class="admin-card">
+                    <small>Total Rooms</small>
+                    <h2>60</h2>
+                </div>
+
+                <div class="admin-card">
+                    <small>Available Rooms</small>
+                    <h2>48</h2>
+                </div>
+
+                <div class="admin-card">
+                    <small>Occupied Rooms</small>
+                    <h2>12</h2>
+                </div>
+
+            </div>
+
+
+            <div class="admin-table">
+
+                <h2>Room Availability</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Room</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Cleaning Staff</th>
+                        <th>Action</th>
+                    </tr>
+
+                    <tr>
+                        <td>101</td>
+                        <td>Single</td>
+                        <td>
+                            <span class="available">
+                                Available
+                            </span>
+                        </td>
+                        <td>Sarah</td>
+                        <td>
+                            <button class="small-button">
+                                Change
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>102</td>
+                        <td>Twin</td>
+                        <td>
+                            <span class="occupied">
+                                Occupied
+                            </span>
+                        </td>
+                        <td>Michael</td>
+                        <td>
+                            <button class="small-button">
+                                Change
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>201</td>
+                        <td>Deluxe</td>
+                        <td>
+                            <span class="available">
+                                Available
+                            </span>
+                        </td>
+                        <td>Emma</td>
+                        <td>
+                            <button class="small-button">
+                                Change
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>301</td>
+                        <td>Suite</td>
+                        <td>
+                            <span class="cleaning">
+                                Cleaning
+                            </span>
+                        </td>
+                        <td>James</td>
+                        <td>
+                            <button class="small-button">
+                                Assign
+                            </button>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="staff-box">
+
+                <h2>Assign Cleaning Staff</h2>
+
+                <div class="two-columns">
+
+                    <div>
+
+                        <label>Room Number</label>
+
+                        <select>
+                            <option>101</option>
+                            <option>102</option>
+                            <option>201</option>
+                            <option>301</option>
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label>Cleaning Staff</label>
+
+                        <select>
+                            <option>Sarah</option>
+                            <option>Michael</option>
+                            <option>Emma</option>
+                            <option>James</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button class="main-button">
+                    ASSIGN CLEANING STAFF
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Crown Stone Hotel · Comfortable stays in the UK
+    </footer>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+let selectedRoom = "Single Bedroom";
+let selectedPrice = 75;
+
+
+function showPage(pageName) {
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.add("hidden");
+    });
+
+    document.getElementById(pageName)
+        .classList.remove("hidden");
+
+    window.scrollTo(0,0);
+}
+
+
+function selectRoom(room, price) {
+
+    selectedRoom = room;
+    selectedPrice = price;
+
+    document.getElementById("summaryRoom").innerText = room;
+
+    let roomTotal = price * 10;
+    let tax = roomTotal * 0.10;
+    let total = roomTotal + tax;
+
+    document.getElementById("summaryPrice")
+        .innerText = "$" + roomTotal.toFixed(0);
+
+    document.getElementById("summaryTax")
+        .innerText = "$" + tax.toFixed(0);
+
+    document.getElementById("summaryTotal")
+        .innerText = "$" + total.toFixed(0);
+
+    document.getElementById("paymentAmount")
+        .innerText = "$" + total.toFixed(0);
+
+    document.getElementById("paymentRoom")
+        .innerText = room;
+
+    document.getElementById("paymentSummaryTotal")
+        .innerText = "$" + total.toFixed(0);
+
+    document.getElementById("confirmationRoom")
+        .innerText = room;
+
+    document.getElementById("confirmationAmount")
+        .innerText = "$" + total.toFixed(0);
+
+    showPage("booking");
+}
+
+
+showPage("login");
+
+</script>
+
+</body>
+</html>
