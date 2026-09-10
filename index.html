@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crown Stone Hotel</title>
+
+    <!-- Existing CSS file -->
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -13,16 +15,18 @@
 
     <!-- ================= HEADER ================= -->
     <header class="header">
+
         <div class="logo">
             CROWN <span>STONE</span>
         </div>
 
         <nav>
-            <a href="#" onclick="showPage('home')">Home</a>
-            <a href="#" onclick="showPage('rooms')">Rooms</a>
-            <a href="#" onclick="showPage('booking')">Booking</a>
-            <a href="#" onclick="showPage('admin')">Admin</a>
+            <a href="#" onclick="showPage('home'); return false;">Home</a>
+            <a href="#" onclick="showPage('home'); return false;">Rooms</a>
+            <a href="#" onclick="showPage('booking'); return false;">Booking</a>
+            <a href="#" onclick="showPage('admin'); return false;">Admin</a>
         </nav>
+
     </header>
 
 
@@ -32,6 +36,7 @@
         <div class="login-background">
 
             <div class="welcome-content">
+
                 <div class="yellow-pill">
                     WELCOME TO CROWN STONE
                 </div>
@@ -45,7 +50,9 @@
                     Experience a comfortable and memorable stay
                     at Crown Stone Hotel.
                 </p>
+
             </div>
+
 
             <div class="login-box">
 
@@ -56,28 +63,73 @@
                 </p>
 
                 <div class="role-buttons">
-                    <button class="role active">Guest</button>
-                    <button class="role">Admin</button>
+
+                    <button type="button"
+                            class="role active"
+                            onclick="selectRole('Guest')">
+                        Guest
+                    </button>
+
+                    <button type="button"
+                            class="role"
+                            onclick="selectRole('Admin')">
+                        Admin
+                    </button>
+
+                    <button type="button"
+                            class="role"
+                            onclick="selectRole('Cleaning Staff')">
+                        Cleaning Staff
+                    </button>
+
                 </div>
 
-                <label>Username</label>
-                <input type="text" placeholder="Enter username">
 
-                <label>Password</label>
-                <input type="password" placeholder="Enter password">
+                <label for="loginUsername">
+                    Username
+                </label>
 
-                <a href="#" class="forgot">
+                <input type="text"
+                       id="loginUsername"
+                       placeholder="Enter username"
+                       autocomplete="username">
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input type="password"
+                       id="loginPassword"
+                       placeholder="Enter password"
+                       autocomplete="current-password">
+
+
+                <a href="#"
+                   class="forgot"
+                   onclick="forgotPassword(); return false;">
                     Forgot password?
                 </a>
 
+
                 <button class="main-button"
-                        onclick="showPage('home')">
+                        type="button"
+                        onclick="loginUser()">
                     LOGIN
                 </button>
 
+
                 <p class="register-text">
                     New guest?
-                    <a href="#" onclick="showPage('home')">
+                    <a href="#"
+                       onclick="showRegistration(); return false;">
+                        Create an account
+                    </a>
+                </p>
+
+                <p class="register-text">
+                    <a href="#"
+                       onclick="showPage('home'); return false;">
                         Explore rooms first
                     </a>
                 </p>
@@ -95,16 +147,20 @@
         <div class="content">
 
             <div class="page-heading">
+
                 <div class="yellow-pill">
                     WELCOME TO HOTEL
                 </div>
 
-                <h1>Find your perfect room</h1>
+                <h1>
+                    Find your perfect room
+                </h1>
 
                 <p>
                     Browse our rooms, compare prices and ratings,
                     and select the room that suits you.
                 </p>
+
             </div>
 
 
@@ -112,9 +168,12 @@
             <div class="search-box">
 
                 <input type="text"
+                       id="roomSearch"
                        placeholder="Search for room type">
 
-                <button class="search-button">
+                <button class="search-button"
+                        type="button"
+                        onclick="searchRooms()">
                     🔍 SEARCH
                 </button>
 
@@ -126,24 +185,33 @@
 
 
                 <!-- SINGLE ROOM -->
-                <div class="room-card">
+                <div class="room-card"
+                     data-room="Single Bedroom">
 
                     <div class="room-image">
+
                         <img
-                        src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
-                        alt="Single bedroom">
+                            src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+                            alt="Single bedroom">
+
                     </div>
 
                     <div class="room-details">
 
-                        <h2>Single Bedroom</h2>
+                        <h2>
+                            Single Bedroom
+                        </h2>
 
                         <div class="room-info">
-                            <span>$75/day</span>
+
+                            <span>
+                                $75/day
+                            </span>
 
                             <span class="stars">
                                 ★★★★☆
                             </span>
+
                         </div>
 
                         <p>
@@ -163,6 +231,7 @@
                         </div>
 
                         <button class="book-button"
+                                type="button"
                                 onclick="selectRoom('Single Bedroom',75)">
                             BOOK
                         </button>
@@ -173,24 +242,33 @@
 
 
                 <!-- TWIN ROOM -->
-                <div class="room-card">
+                <div class="room-card"
+                     data-room="Twin Bedroom">
 
                     <div class="room-image">
+
                         <img
-                        src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80"
-                        alt="Twin bedroom">
+                            src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80"
+                            alt="Twin bedroom">
+
                     </div>
 
                     <div class="room-details">
 
-                        <h2>Twin Bedroom</h2>
+                        <h2>
+                            Twin Bedroom
+                        </h2>
 
                         <div class="room-info">
-                            <span>$120/day</span>
+
+                            <span>
+                                $120/day
+                            </span>
 
                             <span class="stars">
                                 ★★★★★
                             </span>
+
                         </div>
 
                         <p>
@@ -210,6 +288,7 @@
                         </div>
 
                         <button class="book-button"
+                                type="button"
                                 onclick="selectRoom('Twin Bedroom',120)">
                             BOOK
                         </button>
@@ -220,24 +299,33 @@
 
 
                 <!-- DELUXE ROOM -->
-                <div class="room-card">
+                <div class="room-card"
+                     data-room="Deluxe Room">
 
                     <div class="room-image">
+
                         <img
-                        src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80"
-                        alt="Deluxe room">
+                            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80"
+                            alt="Deluxe room">
+
                     </div>
 
                     <div class="room-details">
 
-                        <h2>Deluxe Room</h2>
+                        <h2>
+                            Deluxe Room
+                        </h2>
 
                         <div class="room-info">
-                            <span>$160/day</span>
+
+                            <span>
+                                $160/day
+                            </span>
 
                             <span class="stars">
                                 ★★★★★
                             </span>
+
                         </div>
 
                         <p>
@@ -254,6 +342,7 @@
                         </div>
 
                         <button class="book-button"
+                                type="button"
                                 onclick="selectRoom('Deluxe Room',160)">
                             BOOK
                         </button>
@@ -263,25 +352,34 @@
                 </div>
 
 
-                <!-- SUITE -->
-                <div class="room-card">
+                <!-- EXECUTIVE SUITE -->
+                <div class="room-card"
+                     data-room="Executive Suite">
 
                     <div class="room-image">
+
                         <img
-                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
-                        alt="Executive suite">
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                            alt="Executive suite">
+
                     </div>
 
                     <div class="room-details">
 
-                        <h2>Executive Suite</h2>
+                        <h2>
+                            Executive Suite
+                        </h2>
 
                         <div class="room-info">
-                            <span>$220/day</span>
+
+                            <span>
+                                $220/day
+                            </span>
 
                             <span class="stars">
                                 ★★★★★
                             </span>
+
                         </div>
 
                         <p>
@@ -298,6 +396,7 @@
                         </div>
 
                         <button class="book-button"
+                                type="button"
                                 onclick="selectRoom('Executive Suite',220)">
                             BOOK
                         </button>
@@ -312,7 +411,9 @@
             <!-- HOTEL INFORMATION -->
             <div class="hotel-information">
 
-                <h2>Hotel Facilities</h2>
+                <h2>
+                    Hotel Facilities
+                </h2>
 
                 <div class="facility-container">
 
@@ -345,9 +446,12 @@
 
         <div class="content">
 
-            <a href="#" onclick="showPage('home')" class="back">
+            <a href="#"
+               onclick="showPage('home'); return false;"
+               class="back">
                 ← Back to rooms
             </a>
+
 
             <div class="page-heading">
 
@@ -355,7 +459,9 @@
                     BOOK YOUR STAY
                 </div>
 
-                <h1>Complete your booking</h1>
+                <h1>
+                    Complete your booking
+                </h1>
 
                 <p>
                     Select your dates, guests and room information.
@@ -367,42 +473,87 @@
             <div class="booking-layout">
 
 
-                <!-- FORM -->
+                <!-- BOOKING FORM -->
                 <div class="booking-form">
 
-                    <h2>Booking Information</h2>
+                    <h2>
+                        Booking Information
+                    </h2>
 
-                    <label>Room Type</label>
 
-                    <select id="roomType">
-                        <option>Single Bedroom</option>
-                        <option>Twin Bedroom</option>
-                        <option>Deluxe Room</option>
-                        <option>Executive Suite</option>
+                    <label for="roomType">
+                        Room Type
+                    </label>
+
+                    <select id="roomType"
+                            onchange="roomTypeChanged()">
+
+                        <option value="Single Bedroom">
+                            Single Bedroom
+                        </option>
+
+                        <option value="Twin Bedroom">
+                            Twin Bedroom
+                        </option>
+
+                        <option value="Deluxe Room">
+                            Deluxe Room
+                        </option>
+
+                        <option value="Executive Suite">
+                            Executive Suite
+                        </option>
+
                     </select>
 
 
-                    <label>Number of Rooms</label>
+                    <label for="numberOfRooms">
+                        Number of Rooms
+                    </label>
 
-                    <select>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                    <select id="numberOfRooms"
+                            onchange="updateBookingSummary()">
+
+                        <option value="1">
+                            1
+                        </option>
+
+                        <option value="2">
+                            2
+                        </option>
+
+                        <option value="3">
+                            3
+                        </option>
+
                     </select>
 
 
                     <div class="two-columns">
 
                         <div>
-                            <label>Check-in Date</label>
+
+                            <label for="checkInDate">
+                                Check-in Date
+                            </label>
+
                             <input type="date"
-                                   value="2026-07-06">
+                                   id="checkInDate"
+                                   onchange="validateDates(); updateBookingSummary();">
+
                         </div>
 
+
                         <div>
-                            <label>Check-in Time</label>
+
+                            <label for="checkInTime">
+                                Check-in Time
+                            </label>
+
                             <input type="time"
+                                   id="checkInTime"
                                    value="14:00">
+
                         </div>
 
                     </div>
@@ -411,27 +562,55 @@
                     <div class="two-columns">
 
                         <div>
-                            <label>Check-out Date</label>
+
+                            <label for="checkOutDate">
+                                Check-out Date
+                            </label>
+
                             <input type="date"
-                                   value="2026-07-16">
+                                   id="checkOutDate"
+                                   onchange="validateDates(); updateBookingSummary();">
+
                         </div>
 
+
                         <div>
-                            <label>Check-out Time</label>
+
+                            <label for="checkOutTime">
+                                Check-out Time
+                            </label>
+
                             <input type="time"
+                                   id="checkOutTime"
                                    value="11:00">
+
                         </div>
 
                     </div>
 
 
-                    <label>Number of Guests</label>
+                    <label for="numberOfGuests">
+                        Number of Guests
+                    </label>
 
-                    <select>
-                        <option>1 Guest</option>
-                        <option>2 Guests</option>
-                        <option>3 Guests</option>
-                        <option>4 Guests</option>
+                    <select id="numberOfGuests">
+
+                        <option value="1">
+                            1 Guest
+                        </option>
+
+                        <option value="2">
+                            2 Guests
+                        </option>
+
+                        <option value="3">
+                            3 Guests
+                        </option>
+
+                        <option value="4">
+                            4 Guests
+                        </option>
+
                     </select>
 
 
@@ -440,77 +619,128 @@
                     </h2>
 
 
-                    <label>Guest Name</label>
+                    <label for="guestName">
+                        Guest Name
+                    </label>
 
                     <input type="text"
+                           id="guestName"
                            placeholder="Enter full name">
 
 
-                    <label>Age</label>
+                    <label for="guestAge">
+                        Age
+                    </label>
 
                     <input type="number"
+                           id="guestAge"
+                           min="1"
+                           max="120"
                            placeholder="Enter age">
 
 
-                    <label>ID Proof Type</label>
+                    <label for="idProofType">
+                        ID Proof Type
+                    </label>
 
-                    <select>
-                        <option>Passport</option>
-                        <option>Driving Licence</option>
-                        <option>National ID</option>
+                    <select id="idProofType">
+
+                        <option value="Passport">
+                            Passport
+                        </option>
+
+                        <option value="Driving Licence">
+                            Driving Licence
+                        </option>
+
+                        <option value="National ID">
+                            National ID
+                        </option>
+
                     </select>
 
 
-                    <label>ID Proof Number</label>
+                    <label for="idProofNumber">
+                        ID Proof Number
+                    </label>
 
                     <input type="text"
+                           id="idProofNumber"
                            placeholder="Enter ID proof number">
 
 
                     <button class="main-button"
-                            onclick="showPage('payment')">
+                            type="button"
+                            onclick="processBooking()">
                         CONTINUE TO PAYMENT
                     </button>
 
                 </div>
 
 
-                <!-- SUMMARY -->
+                <!-- BOOKING SUMMARY -->
                 <div class="booking-summary">
 
                     <img
-                    src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
-                    alt="Selected room">
+                        id="summaryImage"
+                        src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+                        alt="Selected room">
+
 
                     <h2 id="summaryRoom">
                         Single Bedroom
                     </h2>
 
-                    <div class="summary-row">
-                        <span>Stay</span>
-                        <strong>10 nights</strong>
-                    </div>
 
                     <div class="summary-row">
-                        <span>Room price</span>
-                        <strong id="summaryPrice">
-                            $750
+
+                        <span>
+                            Stay
+                        </span>
+
+                        <strong id="summaryStay">
+                            1 night
                         </strong>
+
                     </div>
 
+
                     <div class="summary-row">
-                        <span>Tax</span>
-                        <strong id="summaryTax">
+
+                        <span>
+                            Room price
+                        </span>
+
+                        <strong id="summaryPrice">
                             $75
                         </strong>
+
                     </div>
 
+
+                    <div class="summary-row">
+
+                        <span>
+                            Tax
+                        </span>
+
+                        <strong id="summaryTax">
+                            $7.50
+                        </strong>
+
+                    </div>
+
+
                     <div class="summary-total">
-                        <span>Total</span>
+
+                        <span>
+                            Total
+                        </span>
 
                         <strong id="summaryTotal">
-                            $825
+                            $82.50
                         </strong>
+
                     </div>
 
                 </div>
@@ -528,25 +758,33 @@
         <div class="content">
 
             <a href="#"
-               onclick="showPage('booking')"
+               onclick="showPage('booking'); return false;"
                class="back">
                 ← Back to booking
             </a>
+
 
             <div class="payment-layout">
 
 
                 <div class="payment-box">
 
-                    <h1>Payment</h1>
+                    <h1>
+                        Payment
+                    </h1>
 
                     <p>
                         Complete your payment and confirm your booking.
                     </p>
 
+
                     <h2 class="payment-total">
-                        Total: <span id="paymentAmount">$825</span>
+                        Total:
+                        <span id="paymentAmount">
+                            $82.50
+                        </span>
                     </h2>
+
 
                     <h3>
                         How would you like to pay?
@@ -554,75 +792,127 @@
 
 
                     <label class="payment-option">
+
                         <input type="radio"
                                name="payment"
+                               value="Net Banking"
                                checked>
+
                         Net Banking
+
                     </label>
 
 
                     <label class="payment-option">
+
                         <input type="radio"
-                               name="payment">
+                               name="payment"
+                               value="Card">
+
                         Card
+
                     </label>
 
 
                     <label class="payment-option">
+
                         <input type="radio"
-                               name="payment">
+                               name="payment"
+                               value="UPI">
+
                         UPI
+
                     </label>
 
 
-                    <label>
+                    <label for="paymentDetails">
                         Payment Details
                     </label>
 
                     <input type="text"
+                           id="paymentDetails"
                            placeholder="Enter payment details">
 
 
                     <button class="main-button"
-                            onclick="showPage('confirmation')">
+                            type="button"
+                            onclick="processPayment()">
                         PAY NOW
                     </button>
 
                 </div>
 
 
+                <!-- PAYMENT SUMMARY -->
                 <div class="booking-summary">
 
-                    <h2>Booking Summary</h2>
+                    <h2>
+                        Booking Summary
+                    </h2>
+
 
                     <div class="summary-row">
-                        <span>Guest</span>
-                        <strong>Chandan S</strong>
+
+                        <span>
+                            Guest
+                        </span>
+
+                        <strong id="paymentGuest">
+                            -
+                        </strong>
+
                     </div>
 
+
                     <div class="summary-row">
-                        <span>Room</span>
+
+                        <span>
+                            Room
+                        </span>
+
                         <strong id="paymentRoom">
                             Single Bedroom
                         </strong>
+
                     </div>
 
-                    <div class="summary-row">
-                        <span>Check-in</span>
-                        <strong>6 July 2026</strong>
-                    </div>
 
                     <div class="summary-row">
-                        <span>Check-out</span>
-                        <strong>16 July 2026</strong>
+
+                        <span>
+                            Check-in
+                        </span>
+
+                        <strong id="paymentCheckIn">
+                            -
+                        </strong>
+
                     </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Check-out
+                        </span>
+
+                        <strong id="paymentCheckOut">
+                            -
+                        </strong>
+
+                    </div>
+
 
                     <div class="summary-total">
-                        <span>Total</span>
+
+                        <span>
+                            Total
+                        </span>
 
                         <strong id="paymentSummaryTotal">
-                            $825
+                            $82.50
                         </strong>
+
                     </div>
 
                 </div>
@@ -645,9 +935,11 @@
                     ✓ CONFIRMED
                 </div>
 
+
                 <h1>
                     Thank you for choosing us!!
                 </h1>
+
 
                 <p class="confirmation-message">
                     Your booking has been successfully confirmed.
@@ -656,52 +948,108 @@
 
                 <div class="confirmation-grid">
 
-                    <div>
-                        <small>Guest Name</small>
-                        <strong>Chandan S</strong>
-                    </div>
 
                     <div>
-                        <small>Room</small>
+
+                        <small>
+                            Guest Name
+                        </small>
+
+                        <strong id="confirmationGuest">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Room
+                        </small>
+
                         <strong id="confirmationRoom">
                             Single Bedroom
                         </strong>
+
                     </div>
 
+
                     <div>
-                        <small>Total Amount</small>
+
+                        <small>
+                            Total Amount
+                        </small>
+
                         <strong id="confirmationAmount">
-                            $825
+                            $82.50
                         </strong>
+
                     </div>
 
-                    <div>
-                        <small>Booking Status</small>
-                        <strong>Confirmed</strong>
-                    </div>
 
                     <div>
-                        <small>Check-in</small>
-                        <strong>
-                            6 July 2026 · 2:00 PM
+
+                        <small>
+                            Booking Status
+                        </small>
+
+                        <strong id="confirmationStatus">
+                            Confirmed
                         </strong>
+
                     </div>
 
+
                     <div>
-                        <small>Check-out</small>
-                        <strong>
-                            16 July 2026 · 11:00 AM
+
+                        <small>
+                            Check-in
+                        </small>
+
+                        <strong id="confirmationCheckIn">
+                            -
                         </strong>
+
                     </div>
 
-                    <div>
-                        <small>Guests</small>
-                        <strong>1</strong>
-                    </div>
 
                     <div>
-                        <small>Payment</small>
-                        <strong>Paid</strong>
+
+                        <small>
+                            Check-out
+                        </small>
+
+                        <strong id="confirmationCheckOut">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Guests
+                        </small>
+
+                        <strong id="confirmationGuests">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Payment
+                        </small>
+
+                        <strong id="confirmationPayment">
+                            Paid
+                        </strong>
+
                     </div>
 
                 </div>
@@ -710,11 +1058,21 @@
                 <div class="confirmation-buttons">
 
                     <button class="main-button"
+                            type="button"
                             onclick="window.print()">
                         DOWNLOAD CONFIRMATION PDF
                     </button>
 
+
                     <button class="secondary-button"
+                            type="button"
+                            onclick="cancelBooking()">
+                        CANCEL BOOKING
+                    </button>
+
+
+                    <button class="secondary-button"
+                            type="button"
                             onclick="showPage('home')">
                         BACK TO ROOMS
                     </button>
@@ -744,7 +1102,9 @@
                     ADMIN PANEL
                 </div>
 
-                <h1>Hotel Operations</h1>
+                <h1>
+                    Hotel Operations
+                </h1>
 
                 <p>
                     Manage room availability and cleaning staff.
@@ -756,99 +1116,218 @@
             <div class="admin-stats">
 
                 <div class="admin-card">
-                    <small>Total Rooms</small>
-                    <h2>60</h2>
+
+                    <small>
+                        Total Rooms
+                    </small>
+
+                    <h2 id="totalRooms">
+                        60
+                    </h2>
+
                 </div>
 
-                <div class="admin-card">
-                    <small>Available Rooms</small>
-                    <h2>48</h2>
-                </div>
 
                 <div class="admin-card">
-                    <small>Occupied Rooms</small>
-                    <h2>12</h2>
+
+                    <small>
+                        Available Rooms
+                    </small>
+
+                    <h2 id="availableRooms">
+                        48
+                    </h2>
+
+                </div>
+
+
+                <div class="admin-card">
+
+                    <small>
+                        Occupied Rooms
+                    </small>
+
+                    <h2 id="occupiedRooms">
+                        12
+                    </h2>
+
                 </div>
 
             </div>
 
 
+            <!-- ROOM AVAILABILITY -->
             <div class="admin-table">
 
-                <h2>Room Availability</h2>
+                <h2>
+                    Room Availability
+                </h2>
 
-                <table>
+
+                <table id="roomTable">
 
                     <tr>
-                        <th>Room</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                        <th>Cleaning Staff</th>
-                        <th>Action</th>
+
+                        <th>
+                            Room
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Cleaning Staff
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
                     </tr>
 
-                    <tr>
-                        <td>101</td>
-                        <td>Single</td>
+
+                    <tr data-room-number="101">
+
                         <td>
+                            101
+                        </td>
+
+                        <td>
+                            Single
+                        </td>
+
+                        <td>
+
                             <span class="available">
                                 Available
                             </span>
+
                         </td>
-                        <td>Sarah</td>
+
+                        <td class="staff-name">
+                            Sarah
+                        </td>
+
                         <td>
-                            <button class="small-button">
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="changeRoomStatus('101')">
                                 Change
                             </button>
+
                         </td>
+
                     </tr>
 
-                    <tr>
-                        <td>102</td>
-                        <td>Twin</td>
+
+                    <tr data-room-number="102">
+
                         <td>
+                            102
+                        </td>
+
+                        <td>
+                            Twin
+                        </td>
+
+                        <td>
+
                             <span class="occupied">
                                 Occupied
                             </span>
+
                         </td>
-                        <td>Michael</td>
+
+                        <td class="staff-name">
+                            Michael
+                        </td>
+
                         <td>
-                            <button class="small-button">
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="changeRoomStatus('102')">
                                 Change
                             </button>
+
                         </td>
+
                     </tr>
 
-                    <tr>
-                        <td>201</td>
-                        <td>Deluxe</td>
+
+                    <tr data-room-number="201">
+
                         <td>
+                            201
+                        </td>
+
+                        <td>
+                            Deluxe
+                        </td>
+
+                        <td>
+
                             <span class="available">
                                 Available
                             </span>
+
                         </td>
-                        <td>Emma</td>
+
+                        <td class="staff-name">
+                            Emma
+                        </td>
+
                         <td>
-                            <button class="small-button">
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="changeRoomStatus('201')">
                                 Change
                             </button>
+
                         </td>
+
                     </tr>
 
-                    <tr>
-                        <td>301</td>
-                        <td>Suite</td>
+
+                    <tr data-room-number="301">
+
                         <td>
+                            301
+                        </td>
+
+                        <td>
+                            Suite
+                        </td>
+
+                        <td>
+
                             <span class="cleaning">
                                 Cleaning
                             </span>
+
                         </td>
-                        <td>James</td>
+
+                        <td class="staff-name">
+                            James
+                        </td>
+
                         <td>
-                            <button class="small-button">
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="changeRoomStatus('301')">
                                 Assign
                             </button>
+
                         </td>
+
                     </tr>
 
                 </table>
@@ -856,41 +1335,79 @@
             </div>
 
 
+            <!-- CLEANING STAFF -->
             <div class="staff-box">
 
-                <h2>Assign Cleaning Staff</h2>
+                <h2>
+                    Assign Cleaning Staff
+                </h2>
+
 
                 <div class="two-columns">
 
                     <div>
 
-                        <label>Room Number</label>
+                        <label for="staffRoom">
+                            Room Number
+                        </label>
 
-                        <select>
-                            <option>101</option>
-                            <option>102</option>
-                            <option>201</option>
-                            <option>301</option>
+                        <select id="staffRoom">
+
+                            <option value="101">
+                                101
+                            </option>
+
+                            <option value="102">
+                                102
+                            </option>
+
+                            <option value="201">
+                                201
+                            </option>
+
+                            <option value="301">
+                                301
+                            </option>
+
                         </select>
 
                     </div>
 
+
                     <div>
 
-                        <label>Cleaning Staff</label>
+                        <label for="cleaningStaff">
+                            Cleaning Staff
+                        </label>
 
-                        <select>
-                            <option>Sarah</option>
-                            <option>Michael</option>
-                            <option>Emma</option>
-                            <option>James</option>
+                        <select id="cleaningStaff">
+
+                            <option value="Sarah">
+                                Sarah
+                            </option>
+
+                            <option value="Michael">
+                                Michael
+                            </option>
+
+                            <option value="Emma">
+                                Emma
+                            </option>
+
+                            <option value="James">
+                                James
+                            </option>
+
                         </select>
 
                     </div>
 
                 </div>
 
-                <button class="main-button">
+
+                <button class="main-button"
+                        type="button"
+                        onclick="assignCleaningStaff()">
                     ASSIGN CLEANING STAFF
                 </button>
 
@@ -901,7 +1418,183 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ================= CLEANING STAFF PAGE ================= -->
+    <section id="cleaning" class="page hidden">
+
+        <div class="content">
+
+            <div class="page-heading">
+
+                <div class="yellow-pill">
+                    CLEANING STAFF
+                </div>
+
+                <h1>
+                    Room Cleaning
+                </h1>
+
+                <p>
+                    Update the cleaning status of assigned rooms.
+                </p>
+
+            </div>
+
+
+            <div class="admin-table">
+
+                <h2>
+                    Assigned Rooms
+                </h2>
+
+
+                <table>
+
+                    <tr>
+
+                        <th>
+                            Room
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Current Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            101
+                        </td>
+
+                        <td>
+                            Single
+                        </td>
+
+                        <td>
+                            <span class="available">
+                                Available
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="updateCleaningStatus('101','Cleaning')">
+                                Start Cleaning
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            102
+                        </td>
+
+                        <td>
+                            Twin
+                        </td>
+
+                        <td>
+                            <span class="occupied">
+                                Occupied
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="updateCleaningStatus('102','Cleaning')">
+                                Start Cleaning
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            201
+                        </td>
+
+                        <td>
+                            Deluxe
+                        </td>
+
+                        <td>
+                            <span class="cleaning">
+                                Cleaning
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="updateCleaningStatus('201','Available')">
+                                Mark Clean
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            301
+                        </td>
+
+                        <td>
+                            Suite
+                        </td>
+
+                        <td>
+                            <span class="cleaning">
+                                Cleaning
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <button class="small-button"
+                                    type="button"
+                                    onclick="updateCleaningStatus('301','Available')">
+                                Mark Clean
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
     <footer>
         © 2026 Crown Stone Hotel · Comfortable stays in the UK
     </footer>
@@ -910,69 +1603,8 @@
 
 
 <!-- ================= JAVASCRIPT ================= -->
-<script>
-
-let selectedRoom = "Single Bedroom";
-let selectedPrice = 75;
-
-
-function showPage(pageName) {
-
-    const pages = document.querySelectorAll(".page");
-
-    pages.forEach(function(page) {
-        page.classList.add("hidden");
-    });
-
-    document.getElementById(pageName)
-        .classList.remove("hidden");
-
-    window.scrollTo(0,0);
-}
-
-
-function selectRoom(room, price) {
-
-    selectedRoom = room;
-    selectedPrice = price;
-
-    document.getElementById("summaryRoom").innerText = room;
-
-    let roomTotal = price * 10;
-    let tax = roomTotal * 0.10;
-    let total = roomTotal + tax;
-
-    document.getElementById("summaryPrice")
-        .innerText = "$" + roomTotal.toFixed(0);
-
-    document.getElementById("summaryTax")
-        .innerText = "$" + tax.toFixed(0);
-
-    document.getElementById("summaryTotal")
-        .innerText = "$" + total.toFixed(0);
-
-    document.getElementById("paymentAmount")
-        .innerText = "$" + total.toFixed(0);
-
-    document.getElementById("paymentRoom")
-        .innerText = room;
-
-    document.getElementById("paymentSummaryTotal")
-        .innerText = "$" + total.toFixed(0);
-
-    document.getElementById("confirmationRoom")
-        .innerText = room;
-
-    document.getElementById("confirmationAmount")
-        .innerText = "$" + total.toFixed(0);
-
-    showPage("booking");
-}
-
-
-showPage("login");
-
-</script>
+<!-- Keep script.js in the SAME folder as this HTML file -->
+<script src="script.js"></script>
 
 </body>
 </html>
